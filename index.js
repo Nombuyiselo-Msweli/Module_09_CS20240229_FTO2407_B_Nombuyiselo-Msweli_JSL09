@@ -15,8 +15,13 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
     .then(data => {
         console.log(data)
-        document.getElementById("coin-image").src = data.image.small
-        document.getElementById("coin-name").innerHTML = data.name
+        document.getElementById("coin-info").innerHTML = `
+            <img src=${data.image.small} />
+            <span>${data.name}</span>
+        `
     })
     .catch(err => console.error(err))
     
+// {/* <p id="current-price"></p>
+//                     <p id="market-high"></p>
+//                     <p id="market-low"></p> */}
