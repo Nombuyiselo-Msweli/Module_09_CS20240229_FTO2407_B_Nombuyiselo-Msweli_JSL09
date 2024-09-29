@@ -1,4 +1,6 @@
 
+
+//FETCHING THE PHOTO FROM UNSPLASH USING AN UNSPLASH API AND DISPLAYING IT AS A BACKGORUND IMAGE
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     .then(response => response.json())
     .then(data => {
@@ -6,6 +8,7 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
         document.getElementById("photographer").textContent = `By : ${data.user.name}`
     })
 
+    //FETCHING THE CRYPTOCURRENCY COIN INFORMATION AND DISPLAYING IT, WHILE CATCHING ERROS
     fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     .then(res => {
         if (!res.ok) {
@@ -27,6 +30,8 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
     .catch(err => console.error(err))
 
+    //DISPLAYING THE CURRENT TIME AND UPDATING IT EVERY MINUTE
+
     function getCurrentTime(){
         const currentDate = new Date();
         document.getElementById("time").textContent = currentDate.toLocaleTimeString("en-us", {timeStyle: "short"})
@@ -34,6 +39,21 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     
     setInterval(getCurrentTime, 1000)
 
+    // BEFORE API, navigator.geolocation.getCurrentPosition(position => {
+    //     console.log(position)
+    // });
+
+
+    //USING API TO GET LOCATION INFORMATION
     navigator.geolocation.getCurrentPosition(position => {
-        console.log(position)
+        fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
+            .then(res => {
+                if (!res.ok) {
+                    throw Error("Weather data not available")
+                }
+                return res.json()
+            })
+            .then(data => {
+                console.log(data)
+            })
     });
