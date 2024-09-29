@@ -4,6 +4,7 @@ html, body {
 }
 
 body {
+    margin: 0;
     background: no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -11,7 +12,7 @@ body {
     background-size: cover;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 1px 1px 2px #474747;
+    text-shadow: 0px 0px 20px #242424;
 }
 
 main {
@@ -28,4 +29,9 @@ div.top {
 
 h1.time {
     text-align: center;
+}
+
+div#coin-info {
+    display: flex;
+    align-items: center;
 }
