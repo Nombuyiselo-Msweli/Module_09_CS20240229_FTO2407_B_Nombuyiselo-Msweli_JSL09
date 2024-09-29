@@ -25,6 +25,7 @@ main {
 div.top {
     display: flex;
     justify-content: space-between;
+    font-size: 1.3rem;
 }
 
 h1.time {
@@ -34,4 +35,8 @@ h1.time {
 div#coin-info {
     display: flex;
     align-items: center;
+}
+
+div#coin-info > span {
+    margin-left: 10px;
 }
