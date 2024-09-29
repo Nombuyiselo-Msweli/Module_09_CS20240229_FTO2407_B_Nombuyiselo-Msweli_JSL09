@@ -40,3 +40,7 @@ div#coin-info {
 div#coin-info > span {
     margin-left: 10px;
 }
+
+div#crypto {
+    margin-left: 10px;
+}
