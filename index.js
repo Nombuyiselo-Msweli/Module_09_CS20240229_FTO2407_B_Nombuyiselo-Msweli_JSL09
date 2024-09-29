@@ -27,5 +27,10 @@ fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&que
     })
     .catch(err => console.error(err))
 
-    const currentDate = new Date();
-    document.getElementById("time").textContent = currentDate.toLocaleTimeString("en-us", {timeStyle: "short"})
+    function getCurrentTime(){
+        const currentDate = new Date();
+        document.getElementById("time").textContent = currentDate.toLocaleTimeString("en-us", {timeStyle: "short"})
+    }
+    
+    setInterval(getCurrentTime, 1000)
+
